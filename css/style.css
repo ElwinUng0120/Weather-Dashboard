@@ -1,0 +1,19 @@
+.navbar-brand{
+    font-size: 40px !important;
+    font-weight: bold;
+}
+
+.jumbotron{
+    width:20%;
+    height:100%;
+}
+
+.container{
+    margin-top: 1%;
+    margin-right: 2%;
+}
+
+.forcastCard{
+    margin-top: 15%;
+    margin-right: 3.3%;
+}
