@@ -22,72 +22,46 @@
     <!-- Side bar -->
     <div class="jumbotron jumbotron-fluid" style="position: fixed">
         <div class="container">
-            <h1 class="display-4">Fluid jumbotron</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <h4>Search for a city:</h4>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="City name...">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <!-- City List-->
+            <div class="list-group">
+                <button type="button" class="listBtn list-group-item list-group-item-action">Hong Kong</button>
+                <button type="button" class="listBtn list-group-item list-group-item-action">Tokyo</button>
+                <button type="button" class="listBtn list-group-item list-group-item-action">Seoul</button>
+                <button type="button" class="listBtn list-group-item list-group-item-action">New York</button>
+                <button type="button" class="listBtn list-group-item list-group-item-action">Los Angeles</button>
+            </div>
         </div>
     </div>
-
+    
+    <!-- Today's weather card Container -->
     <div class="container">
         <div class="row">
             <!-- Today's weather Card-->
             <div class="card col-12" id="todayCard">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <h2 class="card-title"><span id="city"></span> <span id="date"></span></h2>
+                    <img id="icon" src=""/>
+                    <p class="card-text today" id="temp"></p>
+                    <p class="card-text today" id="humid"></p>
+                    <p class="card-text today" id="windSpeed"></p>
+                    <p class="card-text today" id="indexUV"></p>
                 </div>
             </div>
 
+            <h2 style="margin-top: 5%">5-Day Forcast:</h2>
+
+            <!-- Forcast cards Container -->
             <div class="forcastContainer col-12">
+                <!-- 5 Days Forcast Group-->
                 <div class="row" id="forcastCardGroup">
-                    <!-- 5 Days Forcast Group-->
-                    <div class="card col-2 forcastCard">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
-                    <div class="card col-2 forcastCard">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
-                    <div class="card col-2 forcastCard">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
-                    <div class="card col-2 forcastCard">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
-                    <div class="card col-2 forcastCard">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -95,5 +69,7 @@
 
     <!-- Dashboard manager script -->
     <script src="./js/script.js"></script>
+    <!-- moment.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js" integrity="sha512-Izh34nqeeR7/nwthfeE0SI3c8uhFSnqxV0sI9TvTcXiFJkMd6fB644O64BRq2P/LA/+7eRvCw4GmLsXksyTHBg==" crossorigin="anonymous"></script>
 </body>
 </html>
