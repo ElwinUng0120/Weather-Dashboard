@@ -6,7 +6,14 @@ function makeTodayCard(response, toggle){
     $("#temp").text(`Temperature: ${response.current.temp} °C`);
     $("#windSpeed").text(`Wind Speed: ${response.current.wind_speed} KMPH`);
     $("#humid").text(`Humidity: ${response.current.humidity}%`);
-    $("#indexUV").text(`UV index: ${response.current.uvi}`);
+
+    //Deteremine the color of the UV index badge
+    if (response.current.uvi < 5) $("#indexUV").attr("class", "badge badge-warning");
+    else if (response.current.uvi < 7) $("#indexUV").attr("class", "badge badge-orange");
+    else if (response.current.uvi < 10) $("#indexUV").attr("class", "badge badge-danger");
+    else if (response.current.uvi > 10) $("#indexUV").attr("class", "badge badge-violet");
+
+    $("#indexUV").text(`${response.current.uvi}`);
     $("#icon").attr("src", `http://openweathermap.org/img/wn/${response.current.weather[0].icon}@2x.png`)
 }
 
@@ -27,7 +34,7 @@ function makeForcastCards(daily, forcastDate){
     `);
 }
 
-//
+//Send request to OpenWeather APIs
 function sendRequest(event){
 
     var city = $(".form-control").val();

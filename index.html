@@ -46,12 +46,14 @@
             <!-- Today's weather Card-->
             <div class="card col-12" id="todayCard">
                 <div class="card-body">
-                    <h2 class="card-title"><span id="city"></span> <span id="date"></span></h2>
-                    <img id="icon" src=""/>
+                    <div class="row">
+                        <h2 class="card-title"><span id="city"></span> <span id="date"></span></h2>
+                        <img class="col-1" id="icon" src=""/>
+                    </div>
                     <p class="card-text today" id="temp"></p>
                     <p class="card-text today" id="humid"></p>
                     <p class="card-text today" id="windSpeed"></p>
-                    <p class="card-text today" id="indexUV"></p>
+                    <p class="card-text today">UV index: <span class="" id="indexUV"></span></p>
                 </div>
             </div>
 

@@ -14,7 +14,7 @@
 }
 
 .forcastCard{
-    margin-top: 2%;
+    margin-top: 1%;
     margin-right: 3.3%;
     background-color: lightseagreen;
     color: white;
@@ -37,8 +37,19 @@
 }
 
 #icon{
-    position: absolute;
-    top: 5%;
-    left: 30%;
-    height: 60px;
+    margin-top: -10px;
+    margin-left: -5px;
+}
+
+.badge{
+    font-size: large;
+}
+
+.badge-orange{
+    background-color: orange;
+}
+
+.badge-violet{
+    background-color: darkviolet;
+    color: white;
 }
