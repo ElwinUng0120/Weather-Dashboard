@@ -37,8 +37,8 @@ function makeForcastCards(daily, forcastDate){
 //Send request to OpenWeather APIs
 function sendRequest(event){
 
-    var city = $(".form-control").val();
-    if(event.target.classList[0] == "listBtn") city = event.target.textContent;
+    if(event.originalEvent.key == "Enter") var city = $(".form-control").val();
+    if(event.target.classList[0] == "listBtn") var city = event.target.textContent;
 
     var currentDate = moment();
 
@@ -94,5 +94,6 @@ $(document).ready(function(){
     });
 
     $("#searchBtn").on("click", sendRequest);
+    $(".form-control").on("keydown", sendRequest);
     $(".listBtn").on("click", sendRequest);
 });
