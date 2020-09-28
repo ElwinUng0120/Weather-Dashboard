@@ -2,7 +2,7 @@ var APIKey = "166a433c57516f51dfab1f7edaed8413"; //Key for accessing OpenWeather
 
 //Inserting contents for today's card
 function makeTodayCard(response, toggle){
-    if(toggle) $("#city").text("Toronto");
+    if(toggle) $("#city").text("Toronto"); //To have a default display
     $("#temp").text(`Temperature: ${response.current.temp} °C`);
     $("#windSpeed").text(`Wind Speed: ${response.current.wind_speed} KMPH`);
     $("#humid").text(`Humidity: ${response.current.humidity}%`);
@@ -37,8 +37,15 @@ function makeForcastCards(daily, forcastDate){
 //Send request to OpenWeather APIs
 function sendRequest(event){
 
-    if(event.originalEvent.key == "Enter") var city = $(".form-control").val();
-    if(event.target.classList[0] == "listBtn") var city = event.target.textContent;
+    //Getting city name from user
+    var city = $(".form-control").val();
+    if(event.target.classList[0] == "listBtn") city = event.target.textContent;
+
+    //Fault Detection: In case user did not have any input
+    if(city == ""){
+        alert("City name cannot be empty");
+        return;
+    }
 
     var currentDate = moment();
 
@@ -68,6 +75,9 @@ function sendRequest(event){
             }
         });
     });
+
+    //Remove previous input in search bar
+    $(".form-control").val(null);
 }
 
 //Run these codes when the page is fully loaded
@@ -90,10 +100,8 @@ $(document).ready(function(){
             forcastDate = currentDate.add(1, "day"); //Making dates for forcast carads
             makeForcastCards(response.daily[i], forcastDate.format("MM/DD/YYYY"));
         }
-        console.log(response);
     });
 
     $("#searchBtn").on("click", sendRequest);
-    $(".form-control").on("keydown", sendRequest);
     $(".listBtn").on("click", sendRequest);
 });
