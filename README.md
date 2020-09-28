@@ -15,7 +15,7 @@ This project contains the following files: <br>
 <br>
 
 This project is made using **HTML5**, **CSS**, **Javascript**, **jQuery**, **OpenWeather API** and **moment.js**<br>
-This project is currently hosted on Github Pages: <br>
+This project is currently hosted on Github Pages: https://elwinung0120.github.io/Weather-Dashboard/ <br>
 
 ## script.js
 - Send request to OpenWeather's Current Weather and One Call API for weather data
